@@ -4,4 +4,13 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+
+  &__card {
+    padding: 2rem;
+
+    &-hedder {
+      display: flex;
+      gap: 1rem;
+    }
+  }
 }

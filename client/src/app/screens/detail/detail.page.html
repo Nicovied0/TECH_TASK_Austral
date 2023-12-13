@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="fade-in">
   <ion-toolbar>
     <ion-title>{{pokemon?.name | capitalizeFirstLetter}}</ion-title>
     <ion-buttons slot="start">
@@ -7,19 +7,21 @@
   </ion-toolbar>
 </ion-header>
 
-<div class="cardDetail">
-  <div>
-   
-    <ion-card>
-      <img alt="{{pokemon?.id}}" src="{{pokemon?.image}}" />
-      <ion-card-header>
-        <ion-card-title>{{pokemon?.name | capitalizeFirstLetter}}</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      </ion-card-header>
-    
-      <ion-card-content>
-        Here's a small text description for the card content. Nothing more, nothing less.
-      </ion-card-content>
-    </ion-card>
-  </div>
+<div class="cardDetail fade-in">
+  <ion-card class="cardDetail__card">
+    <div class="cardDetail__card-hedder">
+
+      <ion-card-title>#{{pokemon?.id}}</ion-card-title>
+      <ion-card-title>{{pokemon?.name | capitalizeFirstLetter}}</ion-card-title>
+    </div>
+    <img alt="{{pokemon?.id}}" src="{{pokemon?.image}}" />
+    <ion-card-header>
+      <ion-card-subtitle>{{pokemon?.name | capitalizeFirstLetter}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more,
+      nothing less.
+    </ion-card-content>
+  </ion-card>
 </div>
