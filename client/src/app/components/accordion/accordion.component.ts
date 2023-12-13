@@ -19,7 +19,6 @@ export class AccordionComponent implements OnInit {
   toggleAccordion() {
     this.showContent = !this.showContent;
     this.showContentEvolution = false
-    console.log(this.data)
   }
 
   toggleAccordion2() {

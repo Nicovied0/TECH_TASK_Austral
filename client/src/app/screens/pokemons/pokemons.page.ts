@@ -20,7 +20,6 @@ export class PokemonsPage implements OnInit, OnDestroy {
   async ngOnInit() {
     this.getPokemons()
     this.generateItems();
-    console.log(this.pokemons)
   }
 
   async getPokemons() {

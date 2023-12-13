@@ -13,7 +13,7 @@ export class DetailPage implements OnInit {
   pokemon: any = {};
 
 
-  constructor(private pokemonService: PokemonIDService,private activatedRoute: ActivatedRoute) { }
+  constructor(private pokemonService: PokemonIDService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.getPokemon();
@@ -21,8 +21,8 @@ export class DetailPage implements OnInit {
 
   getPokemon() {
     this.id = this.activatedRoute.snapshot.paramMap.get("id");
-    
-    this.pokemonService.getPokemonsID(this.id ).subscribe((res) => {
+
+    this.pokemonService.getPokemonsID(this.id).subscribe((res) => {
       this.pokemon = {
         name: res[0].name,
         id: res[0].id,
@@ -37,8 +37,7 @@ export class DetailPage implements OnInit {
         evolutionBack: res[0]?.evolutionBack?.[0]?.image || null,
         evolutionNext: res[0]?.evolutionNext?.[0]?.image || null
       };
-      console.log(res);
     });
   }
-  
+
 }

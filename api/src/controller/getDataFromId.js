@@ -15,7 +15,7 @@ const DataForID = async (id) => {
        return pokeDatos.map((i) => i.data);
     });
 
-    if(resp.length === 0 ) return null; //Si no hay info, retorno null
+    if(resp.length === 0 ) return null; 
 
     const desc = await axios.get(resp[0].species.url).then((pokeDatos) => {
       return pokeDatos.data;
