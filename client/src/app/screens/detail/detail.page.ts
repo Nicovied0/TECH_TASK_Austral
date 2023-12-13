@@ -44,7 +44,7 @@ export class DetailPage implements OnInit {
 }
 
 interface Pokemon {
-  name: string,
+  name: any,
   id: number,
   hp: number,
   attack: number,

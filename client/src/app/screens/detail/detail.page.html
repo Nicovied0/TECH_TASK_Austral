@@ -1,14 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>detail</ion-title>
+    <ion-title>{{pokemon?.name | capitalizeFirstLetter}}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="pokemons"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<div>
+<div class="cardDetail">
   <div>
-    <img alt="{{pokemon?.id}}" src="{{pokemon?.image}}" />
+   
+    <ion-card>
+      <img alt="{{pokemon?.id}}" src="{{pokemon?.image}}" />
+      <ion-card-header>
+        <ion-card-title>{{pokemon?.name | capitalizeFirstLetter}}</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+    </ion-card>
   </div>
 </div>
