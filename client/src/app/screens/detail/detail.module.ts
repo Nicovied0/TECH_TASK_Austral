@@ -3,16 +3,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { DetailPageRoutingModule } from './detail-routing.module';
-import { CapitalizeFirstLetterPipe } from 'src/app/pipes/capitalize-first-letter.pipe';
 import { DetailPage } from './detail.page';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DetailPageRoutingModule
+    DetailPageRoutingModule, 
+    SharedModule
   ],
-  declarations: [DetailPage,CapitalizeFirstLetterPipe]
+  declarations: [DetailPage]
 })
-export class DetailPageModule {}
+export class DetailPageModule { }
