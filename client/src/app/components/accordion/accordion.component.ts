@@ -1,5 +1,6 @@
+import { PokemonIDStringService } from './../../Services/PokemonIdByString.service';
 import { Component, OnInit, Input } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-accordion',
   templateUrl: './accordion.component.html',
@@ -8,9 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AccordionComponent implements OnInit {
   @Input() data: any;
 
-  constructor() { }
+  constructor(private pokemonIDStringService: PokemonIDStringService,private router:Router) { }
 
   ngOnInit() { }
+
   showContent: boolean = false;
   showContentEvolution: boolean = false;
 
@@ -23,7 +25,12 @@ export class AccordionComponent implements OnInit {
   toggleAccordion2() {
     this.showContentEvolution = !this.showContentEvolution;
     this.showContent = false
-    console.log(this.data)
+  }
+
+  getEvolution(string:any){
+    const route = this.pokemonIDStringService.getPokemonID(string)
+    this.router.navigate([`/detail/${route}`])
+    window.scroll(0,0)
   }
 
 }

@@ -51,14 +51,22 @@
   <ion-card-content *ngIf="showContentEvolution">
     <ng-content></ng-content>
     <div class="divEvolutions">
-      <div *ngIf="data.evolutionBack" class="divEvolutions_div">
+      <div
+        *ngIf="data.evolutionBack"
+        class="divEvolutions_div"
+        (click)="getEvolution(data.evolutionBack)"
+      >
         <img
           src="{{ data.evolutionBack }}"
           class="divEvolutions_div-imgEvolutins"
         />
         <p class="divEvolutions_div-p">Previous Evolution</p>
       </div>
-      <div *ngIf="data.evolutionNext" class="divEvolutions_div">
+      <div
+        *ngIf="data.evolutionNext"
+        class="divEvolutions_div"
+        (click)="getEvolution(data.evolutionNext)"
+      >
         <img
           src="{{ data.evolutionNext }}"
           class="divEvolutions_div-imgEvolutins"
