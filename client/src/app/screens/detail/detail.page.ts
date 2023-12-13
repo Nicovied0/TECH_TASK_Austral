@@ -39,5 +39,13 @@ export class DetailPage implements OnInit {
       };
     });
   }
+  
+// En tu componente
+imageLoaded = false;
+
+// Método para manejar la carga de la imagen
+onImageLoad() {
+  this.imageLoaded = true;
+}
 
 }

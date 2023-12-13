@@ -76,3 +76,18 @@
     margin: 0;
   }
 }
+.Loading{
+  height: 100vh;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.imgPokemon {
+  opacity: 0; 
+  transition: opacity 0.3s ease-in-out;
+}
+
+.imgPokemon.loaded {
+  opacity: 1; 
+}

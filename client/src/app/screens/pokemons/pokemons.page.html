@@ -31,7 +31,8 @@
             >
               <div class="divImgName">
                 <div class="divimg">
-                  <img [src]="pokemon.image" class="img" />
+                  <img [src]="pokemon.image" class="img" [class.loaded]="imageLoaded" (load)="onImageLoad()" />
+
                 </div>
                 <div class="divName">
                   <p>{{ pokemon.name | capitalizeFirstLetter}}</p>

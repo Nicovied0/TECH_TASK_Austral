@@ -49,23 +49,29 @@ export class PokemonsPage implements OnInit, OnDestroy {
   loadMorePokemons(event: any): void {
     const pokeTo = 20;
     const limitPoke = this.pokemons.length;
-  
+
     this.pokemonService.getPokemons(pokeTo, limitPoke).subscribe(
       data => {
         this.pokemons = this.pokemons.concat(data);
-          event.target.complete();
+        event.target.complete();
       },
       error => {
         console.error('Error fetching Pokemon list:', error);
-          event.target.complete();
+        event.target.complete();
       }
     );
   }
-  
- 
 
-  offset = 0
-  items : any = [];
+  imageLoaded = false;
+
+  onImageLoad() {
+    this.imageLoaded = true;
+  }
+
+
+
+
+  items: any = [];
 
   private generateItems() {
     const count = this.items.length + 1;
@@ -73,7 +79,7 @@ export class PokemonsPage implements OnInit, OnDestroy {
       this.items.push(`Item ${count + i}`);
     }
   }
-  onIonInfinite(ev:any) {
+  onIonInfinite(ev: any) {
     this.generateItems();
     setTimeout(() => {
       (ev as InfiniteScrollCustomEvent).target.complete();

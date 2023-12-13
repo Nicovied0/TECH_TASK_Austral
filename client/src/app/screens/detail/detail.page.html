@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="cardDetail fade-in">
+  <div class="cardDetail fade-in" *ngIf="pokemon.length !== 0">
     <ion-card class="cardDetail__card">
       <div class="cardDetail__card-header">
         <ion-card-title> #{{pokemon?.id}}</ion-card-title>
@@ -23,14 +23,17 @@
             [ngStyle]="{'background-color': 'var(--' + type +
           '-type-color)'}"
           >
-            <img
-              [src]="'/assets/img/types/' + type + '.svg'"
-              class="img"
-            />
+            <img [src]="'/assets/img/types/' + type + '.svg'" class="img" />
           </div>
         </div>
       </div>
-      <img alt="{{pokemon?.id}}" src="{{pokemon?.image}}" class="imgPokemon" />
+      <img
+        alt="{{ pokemon?.id }}"
+        [src]="pokemon?.image"
+        class="imgPokemon"
+        (load)="onImageLoad()"
+        [ngClass]="{ 'loaded': imageLoaded }"
+      />
 
       <ion-card-content>
         <div style="display: flex">
@@ -61,8 +64,11 @@
       <div>
         <div>
           <app-accordion [data]="pokemon"></app-accordion>
-
         </div>
       </div>
     </ion-card></div
 ></ion-content>
+
+<div *ngIf="!pokemon.image" class="Loading">
+  <h2>Loading...</h2>
+</div>

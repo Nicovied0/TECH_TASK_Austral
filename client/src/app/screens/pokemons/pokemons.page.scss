@@ -63,3 +63,11 @@
   align-items: center !important;
   justify-content: center !important;
 }
+.img {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.img.loaded {
+  opacity: 1;
+}
