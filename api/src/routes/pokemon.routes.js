@@ -1,23 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const DataForID = require("../controller/getDataFromId");
-const DataInfo = require("../controller/getData");
+const {getDataInfoForArray}  = require("../controller/getData");
 
 router.get("/", async (req, res) => {
-  const { name } = req.query;
-
   try {
-    if (name) {
-      const pokeName = await DataForName(name.toLowerCase());
-      if (!pokeName)
-        return res.status(404).send("El pokemon ingresado no existe");
-      res.status(200).send(pokeName);
-    } else {
-      const dataInfo = await DataInfo();
-      res.status(200).send(dataInfo);
-    }
+    const { pokeTo, limitPoke } = req.query;
+    const dataInfo = await getDataInfoForArray(pokeTo, limitPoke);
+    res.status(200).json(dataInfo);
   } catch (error) {
-    res.send(error);
+    res.status(500).json({ message: error.message });
   }
 });
 
