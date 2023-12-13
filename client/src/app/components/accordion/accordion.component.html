@@ -1,11 +1,76 @@
 <ion-card>
-  <ion-card-header (click)="toggleAccordion()" class="accordion-header">
-    <ion-card-title>
-      <h2>asdas</h2>
-    </ion-card-title>
-  </ion-card-header>
+  <div class="dropbox">
+    <ion-card-header (click)="toggleAccordion()" class="accordion-header">
+      <ion-card-title>
+        <h2 style="cursor: pointer">Stats</h2>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-header (click)="toggleAccordion2()" class="accordion-header">
+      <ion-card-title>
+        <h2 style="cursor: pointer">Evolutions</h2>
+      </ion-card-title>
+    </ion-card-header>
+  </div>
 
   <ion-card-content *ngIf="showContent">
     <ng-content></ng-content>
+    <div class="divStats">
+      <p style="min-width: 55px">HP</p>
+      <ion-progress-bar
+        [value]="data.hp / 100"
+        style="margin: 0 20px"
+      ></ion-progress-bar>
+      <p>{{ data.hp }}</p>
+    </div>
+    <div class="divStats">
+      <p style="min-width: 55px">Attack</p>
+      <ion-progress-bar
+        [value]="data.attack / 100"
+        style="margin: 0 20px"
+      ></ion-progress-bar>
+      <p>{{ data.attack }}</p>
+    </div>
+    <div class="divStats">
+      <p style="min-width: 55px">Defense</p>
+      <ion-progress-bar
+        [value]="data.defense / 100"
+        style="margin: 0 20px"
+      ></ion-progress-bar>
+      <p>{{ data.defense }}</p>
+    </div>
+    <div class="divStats">
+      <p style="min-width: 55px">Speed</p>
+      <ion-progress-bar
+        [value]="data.speed / 100"
+        style="margin: 0 20px"
+      ></ion-progress-bar>
+      <p>{{ data.speed }}</p>
+    </div>
+  </ion-card-content>
+
+  <ion-card-content *ngIf="showContentEvolution">
+    <ng-content></ng-content>
+    <div class="divEvolutions">
+      <div *ngIf="data.evolutionBack" class="divEvolutions_div">
+        <img
+          src="{{ data.evolutionBack }}"
+          class="divEvolutions_div-imgEvolutins"
+        />
+        <p class="divEvolutions_div-p">Previous Evolution</p>
+      </div>
+      <div *ngIf="data.evolutionNext" class="divEvolutions_div">
+        <img
+          src="{{ data.evolutionNext }}"
+          class="divEvolutions_div-imgEvolutins"
+        />
+        <p class="divEvolutions_div-p">Next Evolution</p>
+      </div>
+      <div
+        *ngIf="!data.evolutionNext && !data.evolutionBack"
+        class="divEvolutions_div"
+      >
+        <h2>This pokemon does not have evolutions</h2>
+      </div>
+    </div>
   </ion-card-content>
 </ion-card>
