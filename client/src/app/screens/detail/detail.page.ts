@@ -37,10 +37,16 @@ export class DetailPage implements OnInit {
           ,
           types: res.types.map((type: any) => {
             return { name: type.type.name };
-          })};
-        console.log(this.pokemon); // Imprime los detalles del Pokémon correctamente aquí
+          })
+        };
+        console.log(this.pokemon);
       });
   }
+
+
+  showStats: boolean = false;
+  showEvolution: boolean = false;
+
 }
 
 interface Pokemon {
@@ -53,5 +59,5 @@ interface Pokemon {
   height: number,
   weight: number,
   image: string,
-  types:any
+  types: any
 }

@@ -44,28 +44,25 @@
           </div>
         </div>
       </ion-card-content>
-      <div>
-        <div>
-          <p>{{pokemon?.height}}</p>
-          <p>Height</p>
+      <div class="divPrincipalStats">
+        <div class="divPrincipalStats_numbers">
+          <p class="divPrincipalStats_numbers-number">{{pokemon?.height}}</p>
+          <p class="divPrincipalStats_numbers-text">Height</p>
         </div>
-        <div>
-          <p>{{pokemon?.weight}}</p>
-          <p>Weight</p>
+        <div class="divPrincipalStats_numbers">
+          <p class="divPrincipalStats_numbers-number">{{pokemon?.weight}}</p>
+          <p class="divPrincipalStats_numbers-text">Weight</p>
         </div>
-        <div>
-          <p>{{pokemon?.height}}</p>
-          <p>Gender Ratio</p>
-        </div>
-      </div>
-      <div>
-        <div>
-          <h2>Stats</h2>
-        </div>
-        <div>
-          <h2>Evolution</h2>
+        <div class="divPrincipalStats_numbers">
+          <p class="divPrincipalStats_numbers-number">{{pokemon?.hp}}</p>
+          <p class="divPrincipalStats_numbers-text">Health Points</p>
         </div>
       </div>
-    </ion-card>
-  </div></ion-content
->
+      <div>
+        <div>
+          <app-accordion [data]="pokemon"></app-accordion>
+
+        </div>
+      </div>
+    </ion-card></div
+></ion-content>

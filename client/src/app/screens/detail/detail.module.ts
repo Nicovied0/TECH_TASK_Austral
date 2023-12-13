@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { DetailPageRoutingModule } from './detail-routing.module';
 import { DetailPage } from './detail.page';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AccordionComponent } from 'src/app/components/accordion/accordion.component';
 
 @NgModule({
   imports: [
@@ -12,8 +13,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     FormsModule,
     IonicModule,
     DetailPageRoutingModule, 
-    SharedModule
+    SharedModule,
   ],
-  declarations: [DetailPage]
+  declarations: [DetailPage,AccordionComponent]
 })
 export class DetailPageModule { }
