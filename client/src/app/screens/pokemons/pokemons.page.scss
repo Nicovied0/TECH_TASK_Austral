@@ -71,3 +71,9 @@
 .img.loaded {
   opacity: 1;
 }
+
+@media screen and (max-width: 550px) {
+  .item {
+  margin: 15px 0;
+  }
+}
