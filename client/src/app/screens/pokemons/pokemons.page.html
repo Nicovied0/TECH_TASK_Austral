@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pokemons</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="row">
+      <ion-col
+        size-lg="6"
+        size-md="8"
+        offset-md="2"
+        size-sm="10"
+        offset-sm="1"
+        class="col"
+      >
+        <div>
+          <div
+            *ngFor="let pokemon of alldate"
+            [routerLink]="['/detail/' + pokemon.id]"
+            class="iconWrapper"
+          >
+            <div class="item"  [ngStyle]="{ 'background-color': 'var(--' + obtenerClaseTipoPokemon(pokemon.types) + ')' }">
+              <div class="divImgName">
+
+                <div class="divimg"> 
+                  <img [src]="pokemon.image" class="img" />
+                </div>
+                <div class="divName">
+                  <p>{{ pokemon.name | capitalizeFirstLetter}}</p>
+                  <div class="divTypes">
+
+                    <div *ngFor="let type of pokemon.types" >
+                      <p class="TypeName">{{ type.name | capitalizeFirstLetter }}</p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <p>#{{pokemon.id}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

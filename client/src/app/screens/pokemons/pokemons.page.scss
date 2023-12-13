@@ -1,0 +1,54 @@
+.item-label {
+  padding: 1rem;
+}
+
+.col {
+  margin: 0 auto !important;
+}
+
+.divName {
+  display: flex;
+  flex-direction: column;
+}
+
+.TypeName {
+  font-size: 0.8rem;
+  display: flex;
+  margin: 0 7px 0 0;
+  padding: 0.3rem;
+  background: #80808008;
+  border-radius: 1rem;
+}
+
+.img {
+  height: 75px;
+  width: 100%;
+  object-fit: cover;
+  background: #80808014;
+  padding: 0.3rem;
+  border-radius: 2rem;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: #000;
+  margin: 15px;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.divImgName {
+  display: flex;
+}
+
+.divimg {
+  margin: 0 10px;
+}
+
+.divTypes {
+  display: flex;
+}
