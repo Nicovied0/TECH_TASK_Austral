@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const userRoute = require("./user.routes");
+const pokemonRoute = require("./pokemon.routes");
 
-router.use("/user", userRoute);
+router.use("/pokemon", pokemonRoute);
 
 module.exports = router;

@@ -53,5 +53,5 @@ interface Pokemon {
   height: number,
   weight: number,
   image: string,
-  types:object
+  types:any
 }

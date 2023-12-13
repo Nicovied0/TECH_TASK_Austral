@@ -7,21 +7,56 @@
   </ion-toolbar>
 </ion-header>
 
-<div class="cardDetail fade-in">
-  <ion-card class="cardDetail__card">
-    <div class="cardDetail__card-hedder">
+<ion-content>
+  <div class="cardDetail fade-in">
+    <ion-card class="cardDetail__card">
+      <div class="cardDetail__card-header">
+        <ion-card-title> #{{pokemon?.id}}</ion-card-title>
+        <ion-card-title
+          >{{pokemon?.name | capitalizeFirstLetter}}</ion-card-title
+        >
+      </div>
+      <img alt="{{pokemon?.id}}" src="{{pokemon?.image}}" />
+      <ion-card-header>
+        <ion-card-subtitle
+          >{{pokemon?.name | capitalizeFirstLetter}}</ion-card-subtitle
+        >
+      </ion-card-header>
 
-      <ion-card-title>#{{pokemon?.id}}</ion-card-title>
-      <ion-card-title>{{pokemon?.name | capitalizeFirstLetter}}</ion-card-title>
-    </div>
-    <img alt="{{pokemon?.id}}" src="{{pokemon?.image}}" />
-    <ion-card-header>
-      <ion-card-subtitle>{{pokemon?.name | capitalizeFirstLetter}}</ion-card-subtitle>
-    </ion-card-header>
+      <ion-card-content>
+        <div *ngFor="let type of pokemon?.types" style="display: flex">
+          <ion-chip
+            class="type"
+            [ngStyle]="{'background-color': 'var(--' + type.name + '-type-color)'}"
+          >
+            {{type.name | capitalizeFirstLetter}}
+          </ion-chip>
+        </div>
+      </ion-card-content>
+      <div>
+        <div>
+          <p>{{pokemon?.height}}</p>
+          <p>Height</p>
+        </div>
+        <div>
+          <p>{{pokemon?.weight}}</p>
+          <p>Weight</p>
+        </div>
+        <div>
+          <p>{{pokemon?.height}}</p>
+          <p>Gender Ratio</p>
+        </div>
+      </div>
+      <div>
+        <div>
 
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more,
-      nothing less.
-    </ion-card-content>
-  </ion-card>
-</div>
+          <h2>Stats</h2>
+
+        </div>
+        <div>
+          <h2>Evolution</h2>
+        </div>
+      </div>
+    </ion-card>
+  </div></ion-content
+>
