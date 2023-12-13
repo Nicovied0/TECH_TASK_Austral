@@ -20,7 +20,7 @@
       >
         <div>
           <div
-            *ngFor="let pokemon of alldate"
+            *ngFor="let pokemon of pokemons"
             [routerLink]="['/detail/' + pokemon.id]"
             class="iconWrapper"
           >
@@ -35,7 +35,7 @@
                   <div class="divTypes">
 
                     <div *ngFor="let type of pokemon.types" >
-                      <p class="TypeName">{{ type.name | capitalizeFirstLetter }}</p>
+                      <p class="TypeName">{{ type | capitalizeFirstLetter }}</p>
 
                     </div>
                   </div>

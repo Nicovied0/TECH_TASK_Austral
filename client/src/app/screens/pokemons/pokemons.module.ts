@@ -14,8 +14,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    PokemonsPageRoutingModule, 
-    SharedModule],
+    PokemonsPageRoutingModule,
+    SharedModule
+  ],
   declarations: [PokemonsPage]
 })
 export class PokemonsPageModule { }
