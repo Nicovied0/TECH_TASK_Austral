@@ -6,15 +6,14 @@ const {getDataInfoForArray}  = require("../controller/getData");
 router.get("/", async (req, res) => {
   try {
     let { pokeTo, limitPoke } = req.query;
-    pokeTo = parseInt(pokeTo); // Convertir a número
-    limitPoke = parseInt(limitPoke); // Convertir a número
+    pokeTo = parseInt(pokeTo);
+    limitPoke = parseInt(limitPoke); 
 
     let dataInfo;
     if (limitPoke === 0) {
-      // Si limitPoke es 0, obtener los primeros pokeTo elementos
       dataInfo = await getDataInfoForArray(pokeTo, 0);
     } else {
-      // Si limitPoke no es 0, obtener el siguiente conjunto de pokeTo elementos desde limitPoke
+
       dataInfo = await getDataInfoForArray(pokeTo, limitPoke);
     }
 

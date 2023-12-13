@@ -20,11 +20,11 @@
         <div *ngFor="let type of pokemon?.types">
           <div
             class="Icon"
-            [ngStyle]="{'background-color': 'var(--' + type.name +
+            [ngStyle]="{'background-color': 'var(--' + type +
           '-type-color)'}"
           >
             <img
-              [src]="'/assets/img/types/' + type.name + '.svg'"
+              [src]="'/assets/img/types/' + type + '.svg'"
               class="img"
             />
           </div>
@@ -37,9 +37,9 @@
           <div *ngFor="let type of pokemon?.types">
             <ion-chip
               class="type"
-              [ngStyle]="{'background-color': 'var(--' + type.name + '-type-color)'}"
+              [ngStyle]="{'background-color': 'var(--' + type + '-type-color)'}"
             >
-              {{type.name | capitalizeFirstLetter}}
+              {{type | capitalizeFirstLetter}}
             </ion-chip>
           </div>
         </div>

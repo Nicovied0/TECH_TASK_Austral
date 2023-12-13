@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { PokemonIDService } from '../..//Services/PokemonID.service';
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -10,54 +10,35 @@ import { ActivatedRoute } from "@angular/router";
 export class DetailPage implements OnInit {
 
   id: string | null = "";
-  pokemon: Pokemon | null = null;
+  pokemon: any = {};
 
-  constructor(
-    private http: HttpClient,
-    private activatedRoute: ActivatedRoute
-  ) { }
+
+  constructor(private pokemonService: PokemonIDService,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.id = this.activatedRoute.snapshot.paramMap.get("id");
-    console.log(this.id);
-
-    this.http
-      .get<any>("https://pokeapi.co/api/v2/pokemon/" + this.id)
-      .subscribe((res) => {
-        this.pokemon = {
-          name: res.name,
-          id: res.id,
-          hp: res.stats[0].base_stat,
-          attack: res.stats[1].base_stat,
-          defense: res.stats[2].base_stat,
-          speed: res.stats[4].base_stat,
-          height: res.height,
-          weight: res.weight,
-          image: res.sprites.other['official-artwork'].front_default
-          ,
-          types: res.types.map((type: any) => {
-            return { name: type.type.name };
-          })
-        };
-        console.log(this.pokemon);
-      });
+    this.getPokemon();
   }
 
-
-  showStats: boolean = false;
-  showEvolution: boolean = false;
-
-}
-
-interface Pokemon {
-  name: any,
-  id: number,
-  hp: number,
-  attack: number,
-  defense: number,
-  speed: number,
-  height: number,
-  weight: number,
-  image: string,
-  types: any
+  getPokemon() {
+    this.id = this.activatedRoute.snapshot.paramMap.get("id");
+    
+    this.pokemonService.getPokemonsID(this.id ).subscribe((res) => {
+      this.pokemon = {
+        name: res[0].name,
+        id: res[0].id,
+        hp: res[0].life,
+        attack: res[0].attack,
+        defense: res[0].defense,
+        speed: res[0].speed,
+        height: res[0].height,
+        weight: res[0].weight,
+        image: res[0].image,
+        types: Array.isArray(res[0].types) ? res[0].types : [],
+        evolutionBack: res[0]?.evolutionBack?.[0]?.image || null,
+        evolutionNext: res[0]?.evolutionNext?.[0]?.image || null
+      };
+      console.log(res);
+    });
+  }
+  
 }
