@@ -4,27 +4,44 @@
   align-items: center !important;
   justify-content: center !important;
   min-height: 100vh;
-  
   overflow: auto;
 
   &__card {
     padding: 2rem;
     min-width: 60%;
-    &-header { /* Corregir el nombre de la clase */
+    margin: 40px;
+    &-header {
       display: flex;
       gap: 1rem;
     }
   }
 }
-.type{
+.type {
   color: #000;
 }
 
-.Icon{
-  padding: 7px;
+.Icon {
+  padding: 10px;
   border-radius: 100%;
+  margin: 15px 10px 15px 0;
 }
-.img{
+.img {
   width: 100%;
   height: 25px;
+  filter: drop-shadow(2px 4px 6px black);
+}
+.divTypesIcon {
+  display: flex;
+}
+.imgPokemon {
+  display: flex;
+
+  margin: 20px auto;
+  max-height: 20rem;
+}
+
+@media screen and (max-width: 800px) {
+  .cardDetail__card {
+    margin: 0;
+  }
 }
