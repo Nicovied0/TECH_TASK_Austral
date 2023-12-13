@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content class="fade-in">
+  
   <ion-grid>
     <ion-row class="row">
       <ion-col
@@ -47,6 +48,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </ion-col>
     </ion-row>
@@ -59,3 +61,8 @@
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
+
+
+<div *ngIf="pokemons.length === 0" class="Loading">
+  <h2>Loading...</h2>
+</div>
