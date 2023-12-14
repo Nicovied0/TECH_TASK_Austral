@@ -9,19 +9,19 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./screens/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./screens/home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'pokemons',
-    loadChildren: () => import('./screens/pokemons/pokemons.module').then( m => m.PokemonsPageModule)
+    loadChildren: () => import('./screens/pokemons/pokemons.module').then(m => m.PokemonsPageModule)
   },
   {
     path: 'detail/:id',
-    loadChildren: () => import('./screens/detail/detail.module').then( m => m.DetailPageModule)
+    loadChildren: () => import('./screens/detail/detail.module').then(m => m.DetailPageModule)
   },
   {
     path: 'comments/:id',
-    loadChildren: () => import('./screens/form-comments/form-comments.module').then( m => m.FormCommentsPageModule)
+    loadChildren: () => import('./screens/form-comments/form-comments.module').then(m => m.FormCommentsPageModule)
   }
 ];
 

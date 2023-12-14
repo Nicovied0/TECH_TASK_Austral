@@ -36,7 +36,6 @@ export class FormCommentsPage implements OnInit {
   getId() {
     this.route.params.subscribe(params => {
       this.id = params["id"]
-      console.log(this.id);
     });
   }
 
@@ -93,7 +92,7 @@ export class FormCommentsPage implements OnInit {
     setTimeout(() => {
       this.location.replaceState(`/detail/${this.id}`);
       this.location.go(`/detail/${this.id}`);
-      window.location.reload(); // Recarga la página
+      window.location.reload();
     }, 3000);
   }
 

@@ -1,19 +1,18 @@
 const express = require("express");
 const router = express.Router();
 const DataForID = require("../controller/getDataFromId");
-const {getDataInfoForArray}  = require("../controller/getData");
+const { getDataInfoForArray } = require("../controller/getData");
 
 router.get("/", async (req, res) => {
   try {
     let { pokeTo, limitPoke } = req.query;
     pokeTo = parseInt(pokeTo);
-    limitPoke = parseInt(limitPoke); 
+    limitPoke = parseInt(limitPoke);
 
     let dataInfo;
     if (limitPoke === 0) {
       dataInfo = await getDataInfoForArray(pokeTo, 0);
     } else {
-
       dataInfo = await getDataInfoForArray(pokeTo, limitPoke);
     }
 
@@ -22,7 +21,6 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-
 
 router.get("/:id", async (req, res) => {
   try {

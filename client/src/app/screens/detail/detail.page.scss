@@ -33,7 +33,7 @@
 .divTypesIcon {
   display: flex;
 }
-.comments{
+.comments {
   margin: 20px;
 }
 .imgPokemon {
@@ -79,7 +79,7 @@
     margin: 0;
   }
 }
-.Loading{
+.Loading {
   height: 100vh;
   display: flex;
   align-items: center !important;
@@ -87,10 +87,10 @@
 }
 
 .imgPokemon {
-  opacity: 0; 
+  opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
 .imgPokemon.loaded {
-  opacity: 1; 
+  opacity: 1;
 }
