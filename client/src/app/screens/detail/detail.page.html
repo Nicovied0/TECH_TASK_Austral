@@ -66,8 +66,15 @@
           <app-accordion [data]="pokemon"></app-accordion>
         </div>
       </div>
-    </ion-card></div
-></ion-content>
+    </ion-card>
+
+    <div>
+      <ion-button color="primary" (click)="goNewComment(pokemon?.id)"
+        >Add Comment</ion-button
+      >
+    </div>
+  </div>
+</ion-content>
 
 <div *ngIf="!pokemon.image" class="Loading">
   <h2>Loading...</h2>

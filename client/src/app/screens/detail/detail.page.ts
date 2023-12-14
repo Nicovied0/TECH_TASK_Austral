@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { PokemonIDService } from '../..//Services/PokemonID.service';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-detail',
@@ -13,7 +13,7 @@ export class DetailPage implements OnInit {
   pokemon: any = {};
 
 
-  constructor(private pokemonService: PokemonIDService, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private pokemonService: PokemonIDService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.getPokemon();
@@ -39,13 +39,15 @@ export class DetailPage implements OnInit {
       };
     });
   }
-  
-// En tu componente
-imageLoaded = false;
 
-// Método para manejar la carga de la imagen
-onImageLoad() {
-  this.imageLoaded = true;
-}
+  imageLoaded = false;
 
+  onImageLoad() {
+    this.imageLoaded = true;
+  }
+
+  goNewComment(id: any) {
+    this.router.navigate([`comments/${id}`])
+
+  }
 }

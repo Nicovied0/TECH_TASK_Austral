@@ -1,0 +1,32 @@
+<ion-header [translucent]="true" class="fade-in">
+  <ion-toolbar>
+    <ion-title>Add Comments</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="details"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="formModule">
+  <div class="formModule__information">
+    <h2>{{pokemon[0]?.name | capitalizeFirstLetter}}</h2>
+    <img src="{{pokemon[0]?.image}}" class="formModule__information-img" />
+    <p>Add a comment to your favorite pokemon</p>
+  </div>
+
+  <form (ngSubmit)="onSubmit()" class="formModule__form">
+    <div class="formModule__form-items">
+      <ion-item>
+        <ion-label position="floating">Comment</ion-label>
+        <ion-textarea
+          type="text"
+          [(ngModel)]="formData.pokemonComments"
+          name="pokemonComments"
+          auto-grow
+        ></ion-textarea>
+      </ion-item>
+
+      <ion-button expand="full" type="submit">Submit</ion-button>
+    </div>
+  </form>
+</ion-content>

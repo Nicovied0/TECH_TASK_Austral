@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const CommentsSchema = new mongoose.Schema({
-  namePokemon: {
-    type: String,
-    required: true,
-  },
   idPokemon: {
     type: String,
     required: true

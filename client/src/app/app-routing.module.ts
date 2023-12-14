@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'detail/:id',
     loadChildren: () => import('./screens/detail/detail.module').then( m => m.DetailPageModule)
+  },
+  {
+    path: 'comments/:id',
+    loadChildren: () => import('./screens/form-comments/form-comments.module').then( m => m.FormCommentsPageModule)
   }
 ];
 

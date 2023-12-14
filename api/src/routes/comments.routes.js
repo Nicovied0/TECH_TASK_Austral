@@ -12,13 +12,11 @@ router.get('/:id', async (req, res) => {
 });
 
 
-router.post('/:id', async (req, res) => {
-  const { namePokemon, pokemonComments } = req.body;
-  const idPokemon = req.params.id;
+router.post('/', async (req, res) => {
+  const { idPokemon, pokemonComments } = req.body;
 
   try {
     const newComment = new Comments({
-      namePokemon,
       idPokemon,
       pokemonComments
     });
