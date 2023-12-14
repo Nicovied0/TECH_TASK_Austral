@@ -1,8 +1,9 @@
 import { CommentsService } from './../../Services/Comment.service';
 import { PokemonIDService } from './../../Services/PokemonID.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-form-comments',
@@ -11,7 +12,13 @@ import { ToastController } from '@ionic/angular';
 })
 export class FormCommentsPage implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute, private pokemonIDService: PokemonIDService, private toastController: ToastController, private commentsService: CommentsService) { }
+  constructor(
+    private location: Location ,
+    private route: ActivatedRoute, 
+    private pokemonIDService: PokemonIDService, 
+    private toastController: ToastController, 
+    private commentsService: CommentsService) { }
+
   id: any
   pokemon: any[] = []
 
@@ -34,7 +41,6 @@ export class FormCommentsPage implements OnInit {
   }
 
   onSubmit() {
-    console.log('Form submitted with data:', this.formData);
     this.formData.id = this.id
     this.commentsService.postComment(this.formData.id, this.formData.pokemonComments).subscribe(
       (response) => {
@@ -85,8 +91,9 @@ export class FormCommentsPage implements OnInit {
 
   goDetails() {
     setTimeout(() => {
-      this.router.navigate([`detail/${this.id}`]);
-      window.scroll(0, 0);
+      this.location.replaceState(`/detail/${this.id}`);
+      this.location.go(`/detail/${this.id}`);
+      window.location.reload(); // Recarga la página
     }, 3000);
   }
 

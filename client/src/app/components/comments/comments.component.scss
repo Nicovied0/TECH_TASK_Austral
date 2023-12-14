@@ -1,0 +1,15 @@
+.comments{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    margin: 50px 20px 10px;
+    &-card{
+        padding: 1rem;
+        cursor: pointer;
+        width: 250px;
+    }
+    &-card:hover{
+        transform: scale(1.1);
+    }
+}

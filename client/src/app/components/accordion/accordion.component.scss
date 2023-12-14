@@ -10,9 +10,7 @@
   justify-content: space-evenly;
 
   &_div {
-
     &-p {
-
       text-align: center;
     }
 
@@ -22,9 +20,19 @@
     }
   }
 }
-.divStats{
-    display: flex;
-    align-items: center;
-    margin: 10px 5px;
+.title {
+  cursor: pointer !important;
+}
 
+.divStats {
+  display: flex;
+  align-items: center;
+  margin: 10px 5px;
+
+  &-nameStat {
+    min-width: 55px;
+  }
+  &-number {
+    margin: 0 20px;
+  }
 }

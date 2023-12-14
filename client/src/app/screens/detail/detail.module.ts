@@ -6,15 +6,16 @@ import { DetailPageRoutingModule } from './detail-routing.module';
 import { DetailPage } from './detail.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AccordionComponent } from 'src/app/components/accordion/accordion.component';
+import { CommentsComponent } from 'src/app/components/comments/comments.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DetailPageRoutingModule, 
+    DetailPageRoutingModule,
     SharedModule,
   ],
-  declarations: [DetailPage,AccordionComponent]
+  declarations: [DetailPage, AccordionComponent, CommentsComponent]
 })
 export class DetailPageModule { }

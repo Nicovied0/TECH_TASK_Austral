@@ -17,6 +17,7 @@ export class DetailPage implements OnInit {
 
   ngOnInit() {
     this.getPokemon();
+    
   }
 
   getPokemon() {

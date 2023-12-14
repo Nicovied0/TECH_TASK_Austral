@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { FormCommentsPageRoutingModule } from './form-comments-routing.module';
 import { FormCommentsPage } from './form-comments.page';
-import { CommentsComponent } from 'src/app/components/comments/comments.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
@@ -15,6 +14,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     FormCommentsPageRoutingModule, 
     SharedModule
   ],
-  declarations: [FormCommentsPage, CommentsComponent]
+  declarations: [FormCommentsPage]
 })
 export class FormCommentsPageModule { }

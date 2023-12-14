@@ -1,13 +1,13 @@
 <ion-card>
   <div class="dropbox">
     <ion-card-header (click)="toggleAccordion()" class="accordion-header">
-      <ion-card-title>
-        <h2 style="cursor: pointer">Stats</h2>
+      <ion-card-title  class="title">
+        <h2>Stats</h2>
       </ion-card-title>
     </ion-card-header>
     <ion-card-header (click)="toggleAccordion2()" class="accordion-header">
-      <ion-card-title>
-        <h2 style="cursor: pointer">Evolutions</h2>
+      <ion-card-title  class="title">
+        <h2>Evolutions</h2>
       </ion-card-title>
     </ion-card-header>
   </div>
@@ -15,34 +15,35 @@
   <ion-card-content *ngIf="showContent">
     <ng-content></ng-content>
     <div class="divStats">
-      <p style="min-width: 55px">HP</p>
+      <p class="divStats-nameStat">HP</p>
       <ion-progress-bar
         [value]="data.hp / 100"
-        style="margin: 0 20px"
+        
+        class="divStats-number"
       ></ion-progress-bar>
       <p>{{ data.hp }}</p>
     </div>
     <div class="divStats">
-      <p style="min-width: 55px">Attack</p>
+      <p class="divStats-nameStat">Attack</p>
       <ion-progress-bar
         [value]="data.attack / 100"
-        style="margin: 0 20px"
+        class="divStats-number"
       ></ion-progress-bar>
       <p>{{ data.attack }}</p>
     </div>
     <div class="divStats">
-      <p style="min-width: 55px">Defense</p>
+      <p class="divStats-nameStat">Defense</p>
       <ion-progress-bar
         [value]="data.defense / 100"
-        style="margin: 0 20px"
+        class="divStats-number"
       ></ion-progress-bar>
       <p>{{ data.defense }}</p>
     </div>
     <div class="divStats">
-      <p style="min-width: 55px">Speed</p>
+      <p class="divStats-nameStat">Speed</p>
       <ion-progress-bar
         [value]="data.speed / 100"
-        style="margin: 0 20px"
+        class="divStats-number"
       ></ion-progress-bar>
       <p>{{ data.speed }}</p>
     </div>

@@ -15,7 +15,6 @@ export class CommentsService {
     }
 
     postComment(id: any, comment: any): Observable<any> {
-        console.log("lo que me llego" + "id: " + id + "comment:" + comment)
         return this.http.post<any>(`${this.url}/comments/`, { idPokemon: id, pokemonComments: comment });
     }
 }

@@ -17,11 +17,11 @@
   <form (ngSubmit)="onSubmit()" class="formModule__form">
     <div class="formModule__form-items">
       <ion-item>
-        <ion-label position="floating">Comment</ion-label>
         <ion-textarea
           type="text"
           [(ngModel)]="formData.pokemonComments"
           name="pokemonComments"
+          placeholder="Add a comment"
           auto-grow
         ></ion-textarea>
       </ion-item>
